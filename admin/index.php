@@ -49,7 +49,7 @@ include "../koneksi.php";
 			{
 				$user_id= $_SESSION['admin'];
 				}
-			$user_login=mysqli_query($db,"SELECT * FROM tb_user WHERE id='$user_id'") or die (mysqli_error());
+			$user_login=mysqli_query($db,"SELECT * FROM tb_user WHERE id_user='$user_id'") or die (mysqli_error());
 			$data_user=mysqli_fetch_array($user_login);
 			?>
 		<a href="index.php"class="logo"> <img src="../img/LOGO.png" class="img-responsive" alt=""></a>
@@ -132,6 +132,9 @@ include "../koneksi.php";
 				<div class="row">
 					<div class="col-md-12">
 						<h2 class="page-title">Home</h2>
+					
+						
+					
 					</div>
 				</div>
 				<div class="row clearfix">

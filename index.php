@@ -80,7 +80,8 @@ else
 									
 
 									<label for="" class="text-uppercase text-sm"></label>
-										<input type="submit" class="btn btn-primary btn-block btn-flat" value="LOGIN" name="login">	
+										<input type="submit" class="btn btn-primary btn-block btn-flat" value="LOGIN" name="login">
+																			
 							</form>
 							<!-- end form -->
 								
@@ -112,7 +113,7 @@ if(isset($_POST['login']))
 			} 
 			else
 			{
-			echo "<script>alert('Login Admin Gagal SIlahkan periksa Username dan Password Anda');</script>";	
+			echo "<script >alert('Login Admin Gagal Silahkan periksa Username dan Password Anda');</script>";	
 			}
 	}
 	else if($level=='karyawan')

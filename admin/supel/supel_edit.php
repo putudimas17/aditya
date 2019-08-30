@@ -1,7 +1,7 @@
 <?php 
 include "../../koneksi.php"; 
 	$id=@$_GET['id'];
-	$modal=mysqli_query($db,"SELECT * FROM tb_supel WHERE id='$id'");
+	$modal=mysqli_query($db,"SELECT * FROM tb_supel WHERE id_supel='$id'");
 	while($r=mysqli_fetch_array($modal)){
 ?>
    <!--modal dialog -->
@@ -13,7 +13,7 @@ include "../../koneksi.php";
 						<form name="modal_popup"  method="POST" action="supel/supel_edit.php">
 							<div class="form-group" hidden="">
 								<label for="id">id</label>
-									<input type="text" id="id" placeholder="id" name ="id" class="form-control" value="<?php echo $r['id']; ?>" required readonly>
+									<input type="text" id="id" placeholder="id" name ="id" class="form-control" value="<?php echo $r['id_supel']; ?>" required readonly>
 							</div>
 							<div class="form-group" >
 								<label for="Nama">Nama</label>
@@ -41,18 +41,15 @@ include "../../koneksi.php";
 	$nama		=$_POST['Nama'];
 	$alamat	=$_POST['Alamat'];
 	$no_tlp	=$_POST['No_tlp'];
+	
 		
-		$query = mysqli_query( $db, "SELECT * FROM tb_supel WHERE Nama='$nama' " );
-			$cek = mysqli_num_rows( $query );
-				if ( $cek > 0 ) {
-					echo "<script> alert('Data sudah pernah diinput, Coba Periksa Lagi!');window.location='../index.php?page=datasupel';</script>";
-
-				} else {
-					mysqli_query( $db, "UPDATE tb_supel SET Nama='$nama',  Alamat='$alamat', No_tlp='$no_tlp' WHERE id='$id'" )or die( $db->error );
-					echo "<script>window.location='../index.php?page=datasupel';</script>";
-				}
+	$save=mysqli_query($db, "UPDATE tb_supel SET Nama='$nama',  Alamat='$alamat', No_tlp='$no_tlp' WHERE id_supel='$id'");	
 		
-		
+		if($save){
+					echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Data Supplier Berhasil Di Simpan.</div>'; header('location:../index.php?page=datasupel');
+				}else{
+						echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Ups, Data Suppelier Gagal Di simpan !</div>';
+					}				
 	}
 										 
 ?>

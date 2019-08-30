@@ -10,7 +10,7 @@ if ( !isset( $_SESSION ) ) {
 	<div class="row">
 		<!--col-->
 		<div class="col-md-12">
-			<h2 class="page-title">Data Suppelier</h2>
+			<h2 class="page-title">Data Supplier</h2>
 				<div class="panel-heading">
 					<p><a href="#" class="btn btn-primary" data-target="#ModalAdd" data-toggle="modal">Tambah Data</a>
 					</p>
@@ -45,8 +45,8 @@ if ( !isset( $_SESSION ) ) {
 		<td><?php echo  $r['Alamat']; ?></td>
 		<td><?php echo  $r['No_tlp']; ?></td>
 		<td align="center">
-			<a href="supel/supel_edit.php?id=<?php echo $r['id']; ?>" data-target="#EditDataSupel" data-toggle="modal" data-backdrop="static" class="fa fa-edit" -></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="#" class="hapus_modal fa fa-trash-o" onclick="confirm_modal('supel/supel_hapus.php?&id=<?php echo  $r['id']; ?>');"></a>
+			<a href="supel/supel_edit.php?id=<?php echo $r['id_supel']; ?>" data-target="#EditDataSupel" data-toggle="modal" data-backdrop="static" class="fa fa-edit" -></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="#" class="hapus_modal fa fa-trash-o" onclick="confirm_modal('supel/supel_hapus.php?&id=<?php echo  $r['id_supel']; ?>');"></a>
 		</td>
 							
 										</tr>
@@ -72,7 +72,7 @@ if ( !isset( $_SESSION ) ) {
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
 						<div class="panel panel-default">
-							<div class="panel-heading"align="center">Tambah Data Suppelier</div>
+							<div class="panel-heading"align="center">Tambah Data Supplier</div>
 								<div class="panel-body">
 									<!-- form -->
 									<form method="POST">

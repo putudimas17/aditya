@@ -49,7 +49,7 @@ include "../koneksi.php";
 			{
 				$user_id= $_SESSION['owner'];
 				}
-			$user_login=mysqli_query($db,"SELECT * FROM tb_user WHERE id='$user_id'") or die (mysqli_error());
+			$user_login=mysqli_query($db,"SELECT * FROM tb_user WHERE id_user='$user_id'") or die (mysqli_error());
 			$data_user=mysqli_fetch_array($user_login);
 			?>
 		<a href="index.php"class="logo"> <img src="../img/LOGO.png" class="img-responsive" alt=""></a>
@@ -92,19 +92,7 @@ include "../koneksi.php";
 					</ul>
 				</li>
 
-				<!-- Account from above -->
-				<ul class="ts-profile-nav">
-					<li><a href="#">Help</a></li>
-					<li><a href="#">Settings</a></li>
-					<li class="ts-account">
-						<a href="#"><img src="../img/ts-avatar.jpg" class="ts-avatar hidden-side" alt=""> Account <i class="fa fa-angle-down hidden-side"></i></a>
-						<ul>
-							<li><a href="#">My Account</a></li>
-							<li><a href="#">Edit Account</a></li>
-							<li><a href="logout.php">Logout</a></li>
-						</ul>
-					</li>
-				</ul>
+			
 
 			</ul>
 		</nav>
